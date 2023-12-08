@@ -13,22 +13,24 @@ namespace Operadores
         static void Main(string[] args)
 
         {
-            int isNumber;
+            Valores();
 
-            int isRep;
+            Console.ReadKey();
 
+        }
+
+        static void Valores()
+        {
             bool esValido = false;
 
             while (!esValido)
 
             {
-
                 Console.Clear();
 
                 Console.WriteLine("Introduce un numero y dare los siguentes numeros que tu elijas y los sumare.");
 
-                string inputNum = (Console.ReadLine());
-
+                string inputNum = Console.ReadLine();
 
 
                 Console.WriteLine("Introduce el numero que quieres que saque los siguentes numeros al que has elegido antes.");
@@ -36,8 +38,7 @@ namespace Operadores
                 string repNum = Console.ReadLine();
 
 
-
-                if (int.TryParse(inputNum, out isNumber) && int.TryParse(repNum, out isRep))
+                if (int.TryParse(inputNum, out int isNumber) && int.TryParse(repNum, out int isRep))
 
                 {
 
@@ -55,7 +56,6 @@ namespace Operadores
                     for (i = 0; i < isRep; i++)
 
                     {
-
                         isNumber++;
 
                         Console.WriteLine($"El {i + 1}º siguente numero es : {isNumber}");
@@ -81,15 +81,11 @@ namespace Operadores
                 if (keyRep == 'R' || keyRep == 'r')
 
                 {
-
                     esValido = false;
 
                 }
 
             }
-
-            Console.ReadKey();
-
         }
 
     }
